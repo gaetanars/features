@@ -1,0 +1,17 @@
+{
+    "name": "kubeswitch",
+    "id": "kubeswitch",
+    "version": "0.1.0",
+    "description": "Install [kubeswitch](https://github.com/danielfoehrKn/kubeswitch)",
+    "documentationURL": "https://github.com/danielfoehrKn/kubeswitch",
+    "options": {
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "description": "Select or enter kubeswitch version"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
