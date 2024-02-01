@@ -80,10 +80,9 @@ chmod 700 ${TMP_DIR}
 
 # Install kubeswitch
 echo "(*) Installing kubeswitch..."
-find_version_from_git_tags KUBESWITCH_VERSION https://github.com/danielfoehrKn/kubeswitch
-KUBESWITCH_VERSION="${KUBESWITCH_VERSION#"v"}"
+find_version_from_git_tags KUBESWITCH_VERSION 'https://github.com/danielfoehrKn/kubeswitch'
 
-curl -L -o /usr/local/bin/switcher https://github.com/danielfoehrKn/kubeswitch/releases/download/${KUBESWITCH_VERSION}/switcher_linux_amd64
+curl -L -o /usr/local/bin/switcher "https://github.com/danielfoehrKn/kubeswitch/releases/download/${KUBESWITCH_VERSION}/switcher_linux_amd64"
 chmod +x /usr/local/bin/switcher
 
 # Clean up
