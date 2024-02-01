@@ -71,7 +71,7 @@ find_version_from_git_tags() {
 }
 
 # Install dependencies
-check_packages curl git
+check_packages curl git ca-certificates
 
 # Use a temporary locaiton for kubeswitch archive
 export TMP_DIR="/tmp/tmp-kubeswitch"
