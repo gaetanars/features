@@ -18,7 +18,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "kubeswitch version" kubeswitch --version
+check "kubeswitch version" switcher --version
 
 
 # Report result

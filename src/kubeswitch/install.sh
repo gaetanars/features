@@ -85,6 +85,17 @@ find_version_from_git_tags KUBESWITCH_VERSION 'https://github.com/danielfoehrKn/
 curl -L -o /usr/local/bin/switcher "https://github.com/danielfoehrKn/kubeswitch/releases/download/${KUBESWITCH_VERSION}/switcher_linux_amd64"
 chmod +x /usr/local/bin/switcher
 
+# Install in bash
+echo 'source <(switcher init bash)' >> ~/.bashrc
+echo 'alias s=switch' >> ~/.bashrc
+echo 'complete -o default -F _switcher s' >> ~/.bashrc
+
+# Install in zsh
+echo 'source <(switcher init zsh)' >> ~/.zshrc
+echo 'source <(alias s=switch)' >> ~/.zshrc
+echo 'source <(compdef _switcher switch)' >> ~/.zshrc
+
+
 # Clean up
 rm -rf /var/lib/apt/lists/*
 
