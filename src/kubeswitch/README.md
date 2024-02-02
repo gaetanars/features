@@ -17,7 +17,9 @@ Install [kubeswitch](https://github.com/danielfoehrKn/kubeswitch)
 |-----|-----|-----|-----|
 | version | Select or enter kubeswitch version | string | latest |
 
+## Architecture
 
+Only works on AMD64 arch at this time.
 
 ---
 
