@@ -1,8 +1,7 @@
 {
-    "all": {
+    "test": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
-            "kubeswitch": {},
             "ghcr.io/devcontainers/features/terraform:1": {},
             "tflint-aws": {}
         }
