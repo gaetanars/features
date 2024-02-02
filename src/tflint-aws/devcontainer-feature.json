@@ -1,0 +1,25 @@
+{
+    "name": "TFLint ruleset for AWS",
+    "id": "tflint-aws",
+    "version": "0.1.0",
+    "description": "Installs TFLint ruleset for AWS",
+    "documentationURL": "https://github.com/gaetanars/features/tree/main/src/tflint-aws",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Select or enter a TFLint Ruleset version for terraform-provider-aws."
+        }
+    },
+    "postCreateCommand": "tflint --init",
+    "dependsOn": {
+        "ghcr.io/devcontainers/features/terraform:1": {}
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/terraform:1"
+    ]
+}
