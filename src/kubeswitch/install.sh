@@ -10,6 +10,7 @@ KUBESWITCH_VERSION=${VERSION:-"latest"}
 architecture="$(uname -m)"
 case ${architecture} in
     x86_64) architecture="amd64";;
+    aarch64 | armv8*) architecture="arm64";;
     *) echo "(!) Architecture ${architecture} unsupported"; exit 1 ;;
 esac
 
@@ -44,7 +45,7 @@ find_version_from_git_tags() {
     local repository=$2
     local prefix=${3:-"tags/"}
     local separator=${4:-"."}
-    local last_part_optional=${5:-"false"}    
+    local last_part_optional=${5:-"false"}
     if [ "$(echo "${requested_version}" | grep -o "." | wc -l)" != "2" ]; then
         local escaped_separator=${separator//./\\.}
         local last_part
@@ -82,7 +83,7 @@ chmod 700 ${TMP_DIR}
 echo "(*) Installing kubeswitch..."
 find_version_from_git_tags KUBESWITCH_VERSION 'https://github.com/danielfoehrKn/kubeswitch'
 
-curl -L -o /usr/local/bin/switcher "https://github.com/danielfoehrKn/kubeswitch/releases/download/${KUBESWITCH_VERSION}/switcher_linux_amd64"
+curl -L -o /usr/local/bin/switcher "https://github.com/danielfoehrKn/kubeswitch/releases/download/${KUBESWITCH_VERSION}/switcher_linux_${architecture}"
 chmod +x /usr/local/bin/switcher
 
 # Install in bash
